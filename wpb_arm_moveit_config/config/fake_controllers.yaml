@@ -7,5 +7,5 @@ controller_list:
       - joint_3
       - joint_4
 initial:  # Define initial robot poses.
-  - group: wpb_arm
-    pose: home
+#  - group: wpb_arm
+#    pose: home

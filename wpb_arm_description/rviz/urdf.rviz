@@ -90,6 +90,10 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        upper_parallel_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         wrist_link:
           Alpha: 1
           Show Axes: false
@@ -180,4 +184,4 @@ Window Geometry:
     collapsed: true
   Width: 1831
   X: 583
-  Y: 116
+  Y: 86

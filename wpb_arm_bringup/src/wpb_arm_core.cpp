@@ -87,7 +87,7 @@ void executeTrajectory(const control_msgs::FollowJointTrajectoryGoalConstPtr& go
     {
         pos_send[i] = goal->trajectory.points[nExecIndex].positions[i] * fAngToDeg + 90;
     }
-    pos_send[4] = 180 -pos_send[4];
+    // pos_send[4] = 180 -pos_send[4];
     // pos_send[2] = 90;
     
      ROS_WARN(" name 1-%s 2-%s 3-%s 4-%s 5-%s ",
@@ -256,7 +256,7 @@ int main(int argc, char** argv)
             joint_pos[i] = (fTmp-90)*fDegToAng;
         }
         // joint_pos[2] =  -joint_pos[2];
-        joint_pos[4] =  -joint_pos[4];
+        // joint_pos[4] =  -joint_pos[4];
         msg.name = joint_name;
         msg.position = joint_pos;
         joint_state_pub.publish(msg);

@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /MotionPlanning1
         - /MotionPlanning1/Planning Request1
+        - /MotionPlanning1/Planning Metrics1
         - /MotionPlanning1/Planned Path1
       Splitter Ratio: 0.7425600290298462
     Tree Height: 630
@@ -100,6 +101,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          upper_parallel_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           wrist_link:
             Alpha: 1
             Show Axes: false
@@ -109,7 +114,7 @@ Visualization Manager:
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
         Show Robot Collision: false
-        Show Robot Visual: true
+        Show Robot Visual: false
         Show Trail: false
         State Display Time: 0.05 s
         Trail Step Size: 1
@@ -125,7 +130,7 @@ Visualization Manager:
         Colliding Link Color: 255; 0; 0
         Goal State Alpha: 1
         Goal State Color: 250; 128; 0
-        Interactive Marker Size: 0.07999999821186066
+        Interactive Marker Size: 0.05999999865889549
         Joint Violation Color: 255; 0; 255
         Planning Group: wpb_arm
         Query Goal State: true
@@ -175,6 +180,10 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          upper_parallel_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
           wrist_link:
             Alpha: 1
             Show Axes: false
@@ -201,25 +210,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 0.5444914102554321
+      Distance: 0.6539270281791687
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.05819607526063919
-        Y: -0.021498635411262512
-        Z: 1.9371566395420814e-7
+        X: 0.040171459317207336
+        Y: -0.08808000385761261
+        Z: 2.9802379231114173e-7
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5697967410087585
+      Pitch: 0.3847969174385071
       Target Frame: base_link
       Value: XYOrbit (rviz)
-      Yaw: 0.9467720985412598
+      Yaw: 0.9867700338363647
     Saved: ~
 Window Geometry:
   Displays:

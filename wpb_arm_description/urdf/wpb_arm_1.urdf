@@ -52,6 +52,23 @@
     <origin xyz="0.02 0 0.035" rpy="0 0 0" /> <!--pos-->
 </joint>
 
+<!-- upper_parallel_link -->
+<link name = "upper_parallel_link">
+  <origin rpy = "0 0 0" xyz = "0 0 10.0"/>
+    <geometry>
+      <box size="0.001 0.001 0.001" />
+    </geometry>
+    <material name="blue" />
+</link>
+<joint name = "upper_parallel_joint" type = "revolute">
+    <parent link = "upper_arm_link"/>
+    <child link = "upper_parallel_link"/>
+    <origin xyz = "0 0 0.115"/>
+    <axis xyz = "0 1 0"/>
+    <limit effort = "1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <mimic joint = "joint_1" multiplier = "-1" offset = "0"/>
+</joint>
+
 <!-- elbow_link -->
 <link name = "elbow_link">
   <visual>
@@ -63,11 +80,11 @@
   </visual>
 </link>
 <joint name = "joint_2" type="revolute">
-  <parent link = "upper_arm_link"/>
+  <parent link = "upper_parallel_link"/>
   <child link = "elbow_link"/>
-  <axis xyz="0 1 0"/>
+  <axis xyz="0 -1 0"/>
     <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
-    <origin xyz="0 0 0.115" rpy="0 0 0" /> <!--pos-->
+    <origin xyz="0 0 0" rpy="0 0 0" /> <!--pos-->
 </joint>
 
 <!-- forearm_link -->
@@ -101,7 +118,7 @@
 <joint name = "joint_4" type="revolute">
   <parent link = "forearm_link"/>
   <child link = "wrist_link"/>
-  <axis xyz="0 1 0"/>
+  <axis xyz="0 -1 0"/>
     <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
     <origin xyz="0.12 0 0" rpy="0 0 0" /> <!--pos-->
 </joint>

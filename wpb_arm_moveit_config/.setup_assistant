@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: wpb_arm_description
+    relative_path: urdf/wpb_arm_1.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/wpb_arm_1.srdf
+  CONFIG:
+    author_name: ZhangWanjie
+    author_email: zhangwanjie@126.com
+    generated_timestamp: 1617710514

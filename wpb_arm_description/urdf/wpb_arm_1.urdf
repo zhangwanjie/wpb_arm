@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<robot name="wpb_arm_1">
+
+  <material name = "blue">
+    <color rgba = "0.2 0.2 0.9 1"/>
+  </material>
+
+<!-- base_link -->
+<link name="base_link">
+<visual>
+  <origin rpy = "0 0 0" xyz = "0 0 0.015"/>
+  <geometry>
+    <box size="0.1 0.06 0.03" />
+  </geometry>
+  <material name="blue" />
+</visual>
+</link>
+
+<!-- shoulder_link -->
+<link name = "shoulder_link">
+  <visual>
+    <origin rpy = "0 0 0" xyz = "0 0 0.01"/>
+    <geometry>
+      <box size="0.065 0.075 0.02" />
+    </geometry>
+    <material name="blue" />
+  </visual>
+</link>
+<joint name = "joint_0" type="revolute">
+  <parent link = "base_link"/>
+  <child link = "shoulder_link"/>
+  <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <origin xyz="0 0 0.04" rpy="0 0 0" /> <!--pos-->
+</joint>
+
+<!-- upper_arm_link -->
+<link name = "upper_arm_link">
+  <visual>
+    <origin rpy = "0 0 0" xyz = "0 0 0.0575"/>
+    <geometry>
+      <box size="0.03 0.03 0.115" />
+    </geometry>
+    <material name="blue" />
+  </visual>
+</link>
+<joint name = "joint_1" type="revolute">
+  <parent link = "shoulder_link"/>
+  <child link = "upper_arm_link"/>
+  <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <origin xyz="0.02 0 0.035" rpy="0 0 0" /> <!--pos-->
+</joint>
+
+<!-- elbow_link -->
+<link name = "elbow_link">
+  <visual>
+    <origin rpy = "0 0 0" xyz = "-0.02 0 0.02"/>
+    <geometry>
+      <box size="0.07 0.04 0.025" />
+    </geometry>
+    <material name="blue" />
+  </visual>
+</link>
+<joint name = "joint_2" type="revolute">
+  <parent link = "upper_arm_link"/>
+  <child link = "elbow_link"/>
+  <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <origin xyz="0 0 0.115" rpy="0 0 0" /> <!--pos-->
+</joint>
+
+<!-- forearm_link -->
+<link name = "forearm_link">
+  <visual>
+    <origin rpy = "0 1.57 0" xyz = "0.06 0 0 "/>
+    <geometry>
+      <cylinder length="0.1" radius="0.01"/>
+    </geometry>
+    <material name="blue" />
+  </visual>
+</link>
+<joint name = "joint_3" type="revolute">
+  <parent link = "elbow_link"/>
+  <child link = "forearm_link"/>
+  <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <origin xyz="0.015 0 0.02" rpy="0 0 0" /> 
+</joint>
+
+<!-- wrist_link -->
+<link name = "wrist_link">
+  <visual>
+    <origin rpy = "0 0 0" xyz = "0.02 0 0"/>
+    <geometry>
+      <box size="0.04 0.025 0.02" />
+    </geometry>
+    <material name="blue" />
+  </visual>
+</link>
+<joint name = "joint_4" type="revolute">
+  <parent link = "forearm_link"/>
+  <child link = "wrist_link"/>
+  <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+    <origin xyz="0.12 0 0" rpy="0 0 0" /> <!--pos-->
+</joint>
+
+
+</robot>

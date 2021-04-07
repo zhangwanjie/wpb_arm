@@ -1,0 +1,14 @@
+<launch>
+
+  <arg name="model" default="$(find wpb_arm_description)/urdf/wpb_arm_1.urdf"/>
+  <arg name="rvizconfig" default="$(find wpb_arm_description)/rviz/urdf.rviz" />
+
+  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+
+  <node name="wpb_arm_core" pkg="wpb_arm_bringup" type="wpb_arm_core" output="screen"/>
+  <node name="wpb_arm_trackbars" pkg="wpb_arm_tutorials" type="wpb_arm_trackbars" output="screen"/>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+  
+</launch>

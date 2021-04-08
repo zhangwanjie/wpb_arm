@@ -253,6 +253,8 @@ int main(int argc, char** argv)
             fTmp = wpb_arm.nRecvJointPos[i];
             joint_pos[i] = (fTmp-90)*fDegToAng;
         }
+        joint_pos[2] -= 20*fDegToAng;
+        joint_pos[4] += 15*fDegToAng;
         msg.name = joint_name;
         msg.position = joint_pos;
         joint_state_pub.publish(msg);
